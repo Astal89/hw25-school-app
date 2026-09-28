@@ -3,7 +3,10 @@ package ru.hogwarts.school.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -45,6 +48,13 @@ public class Faculty {
 
     public String getColor() {
         return color;
+    }
+
+    @OneToMany(mappedBy = "faculty")
+    private Collection<Student> students;
+
+    public Collection<Student> getStudents() {
+        return students;
     }
 
     @Override
