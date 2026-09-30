@@ -23,6 +23,12 @@ public class FacultyController {
         return facultyService.findFaculty(id);
     }
 
+    @GetMapping("/id/{id}/students")
+    public Collection<Student> getFacultyStudents(@PathVariable Long id) {
+        return facultyService.getStudents(id);
+    }
+
+
     @GetMapping("/color/{color}")
     public Collection<Faculty> getFacultiesByColor(@PathVariable String color) {
         return facultyService.getFacultiesByColor(color);
@@ -31,6 +37,12 @@ public class FacultyController {
     @GetMapping
     public Collection<Faculty> getAllFaculties() {
         return facultyService.getAllFaculties();
+    }
+
+    @GetMapping("/search")
+    public Collection<Faculty> searchFaculties(@RequestParam (required = false) String name,
+                                               @RequestParam (required = false) String color) {
+        return facultyService.getFacultiesByNameOrColorIgnoreCase(name, color);
     }
 
     @PostMapping
