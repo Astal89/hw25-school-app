@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Faculty {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String name;
     private String color;
 
