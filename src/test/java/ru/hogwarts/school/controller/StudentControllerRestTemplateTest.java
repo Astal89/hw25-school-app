@@ -42,7 +42,7 @@ public class StudentControllerRestTemplateTest {
     void testFindExistingFacultyByStudentId() throws Exception {
         Faculty faculty = testRestTemplate.getForObject(buildUrl("/student/id/5/faculty"), Faculty.class);
         assertThat(faculty).isNotNull();
-        assertThat(faculty.getId()).isEqualTo(2);
+        assertThat(faculty.getId()).isEqualTo(3);
     }
 
     // поиск студентов по возрасту
