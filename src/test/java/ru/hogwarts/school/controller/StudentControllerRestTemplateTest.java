@@ -23,7 +23,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class StudentControllerRestTemplateTest {
     @LocalServerPort
     private int port;
-
     @Autowired
     private TestRestTemplate testRestTemplate;
 
